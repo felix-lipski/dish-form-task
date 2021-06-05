@@ -30,7 +30,7 @@ form {
   input,
   select,
   div.html-duration-picker-wrapper {
-    margin: 0 0 20px 0;
+    //margin: 0 0 20px 0;
     width: auto;
   }
   input,
@@ -40,5 +40,11 @@ form {
     border: 1px solid $dgrey;
     border-radius: 2px;
     padding: 4px;
+  }
+
+  .error {
+    font-size: 14px;
+    height: 20px;
+    color: red;
   }
 }
