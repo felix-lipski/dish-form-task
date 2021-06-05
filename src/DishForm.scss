@@ -1,0 +1,44 @@
+$white: white;
+$lgrey: #ddddff;
+$dgrey: #777777;
+
+body,
+html,
+div#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $lgrey;
+}
+
+form {
+  width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  border: 1px solid $dgrey;
+  border-radius: 2px;
+  div.pizza-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input,
+  select,
+  div.html-duration-picker-wrapper {
+    margin: 0 0 20px 0;
+    width: auto;
+  }
+  input,
+  select,
+  div.html-duration-picker {
+    background-color: $white;
+    border: 1px solid $dgrey;
+    border-radius: 2px;
+    padding: 4px;
+  }
+}

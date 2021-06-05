@@ -1,5 +1,6 @@
 import { useForm, useWatch } from "react-hook-form";
 import "html-duration-picker";
+import "./DishForm.scss";
 import { Dish } from "./types";
 
 const DishForm = () => {
@@ -24,7 +25,7 @@ const DishForm = () => {
       </select>
 
       {dish_type === "pizza" ? (
-        <div>
+        <div className="pizza-group">
           <input
             type="number"
             step="0.1"
