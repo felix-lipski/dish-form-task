@@ -1,5 +1,7 @@
+import DishForm from "./DishForm";
+
 function App() {
-  return <>app works</>;
+  return <DishForm />;
 }
 
 export default App;
