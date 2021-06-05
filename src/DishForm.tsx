@@ -4,6 +4,17 @@ import "html-duration-picker";
 import "./DishForm.scss";
 import { Dish } from "./types";
 
+const apiUrl = "https://frosty-wood-6558.getsandbox.com:443/dishes";
+
+const postData = async (data: Dish) => {
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return response.json();
+};
+
 const DishForm = () => {
   const {
     register,
@@ -14,7 +25,10 @@ const DishForm = () => {
 
   const dish_type = useWatch({ control, name: "type", defaultValue: "pizza" });
 
-  const onSubmit = (data: Dish) => console.log(data);
+  const onSubmit = async (data: Dish) => {
+    const response = await postData(data);
+    console.log("Response:", response);
+  };
 
   const fieldRequired = { value: true, message: "Field required!" };
 
