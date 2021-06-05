@@ -24,13 +24,14 @@ const DishForm = () => {
       </select>
 
       {dish_type === "pizza" ? (
-        <>
+        <div>
           <input
             type="number"
             step="0.1"
             defaultValue="30"
             {...register("diameter", {
               required: true,
+              shouldUnregister: true,
               setValueAs: (value: string) => parseFloat(value),
             })}
           />
@@ -40,21 +41,26 @@ const DishForm = () => {
             defaultValue="8"
             {...register("no_of_slices", {
               required: true,
+              shouldUnregister: true,
+              setValueAs: (value: string) => parseInt(value),
+            })}
+          />
+        </div>
+      ) : dish_type === "soup" ? (
+        <>
+          <div />
+          <input
+            type="range"
+            min="1"
+            max="10"
+            defaultValue="5"
+            {...register("spiciness_scale", {
+              required: true,
+              shouldUnregister: true,
               setValueAs: (value: string) => parseInt(value),
             })}
           />
         </>
-      ) : dish_type === "soup" ? (
-        <input
-          type="range"
-          min="1"
-          max="10"
-          defaultValue="5"
-          {...register("spiciness_scale", {
-            required: true,
-            setValueAs: (value: string) => parseInt(value),
-          })}
-        />
       ) : dish_type === "sandwich" ? (
         <input
           type="number"
@@ -62,6 +68,7 @@ const DishForm = () => {
           defaultValue="2"
           {...register("slices_of_bread", {
             required: true,
+            shouldUnregister: true,
             setValueAs: (value: string) => parseInt(value),
           })}
         />
