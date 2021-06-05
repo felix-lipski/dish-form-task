@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import "html-duration-picker";
 
 const DishForm = () => {
   const { register, handleSubmit } = useForm();
@@ -8,6 +9,7 @@ const DishForm = () => {
       <input type="text" {...register("name", { required: true })} />
       <input
         type="text"
+        className="html-duration-picker"
         {...register("preparation_time", { required: true })}
       />
       <select {...register("type", { required: true })}>

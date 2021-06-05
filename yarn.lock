@@ -5474,6 +5474,11 @@ html-comment-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/html-comment-regex/-/html-comment-regex-1.1.2.tgz#97d4688aeb5c81886a364faa0cad1dda14d433a7"
   integrity sha512-P+M65QY2JQ5Y0G9KKdlDpo0zK+/OHptU5AaBwUfAIDJZk1MYf32Frm84EcOytfJE0t5JvkAnKlmjsXDnWzCJmQ==
 
+html-duration-picker@^2.2.13:
+  version "2.2.13"
+  resolved "https://registry.yarnpkg.com/html-duration-picker/-/html-duration-picker-2.2.13.tgz#3e7b3457319753ad0e8d62e1804d0fc651886e23"
+  integrity sha512-y090fi6RSbfe5r1ytnNd2Mr2xtXo+uUOZQrJYBM2+l0GQsCA9UM84+57kE9TJOhZ61rwTIHuJgPpxg3hLbP4uQ==
+
 html-encoding-sniffer@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/html-encoding-sniffer/-/html-encoding-sniffer-2.0.1.tgz#42a6dc4fd33f00281176e8b23759ca4e4fa185f3"
