@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import "html-duration-picker";
+import { Dish } from "./types";
 
 const DishForm = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: Dish) => console.log(data);
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input type="text" {...register("name", { required: true })} />
