@@ -13,3 +13,7 @@ export interface Dish {
   spiciness_scale?: Spiciness;
   slices_of_bread?: number;
 }
+
+export type ServerSideErrors = {
+  [Key in keyof Dish]?: string;
+}

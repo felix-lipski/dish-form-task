@@ -2,24 +2,23 @@ import { useForm, useWatch } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import "html-duration-picker";
 import "./DishForm.scss";
-import { Dish } from "./types";
+import { Dish, ServerSideErrors } from "./types";
 
 const apiUrl = "https://frosty-wood-6558.getsandbox.com:443/dishes";
 
-const postData = async (data: Dish) => {
-  const response = await fetch(apiUrl, {
+const postData = async (data: Dish) =>
+  await fetch(apiUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  return response.json();
-};
 
 const DishForm = () => {
   const {
     register,
     handleSubmit,
     control,
+    setError,
     formState: { errors },
   } = useForm({ mode: "all" });
 
@@ -27,7 +26,19 @@ const DishForm = () => {
 
   const onSubmit = async (data: Dish) => {
     const response = await postData(data);
-    console.log("Response:", response);
+    const responseJson: Dish | ServerSideErrors = await response.json();
+
+    // Server-side errors
+    if (!response.ok) {
+      Object.entries(responseJson).forEach(([key, value]) =>
+        setError(key, {
+          type: "server",
+          message: value,
+        })
+      );
+    }
+
+    console.log("Response:", responseJson);
   };
 
   const fieldRequired = { value: true, message: "Field required!" };
