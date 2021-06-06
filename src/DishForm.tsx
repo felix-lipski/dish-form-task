@@ -19,7 +19,7 @@ const DishForm = () => {
     handleSubmit,
     control,
     setError,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({ mode: "all" });
 
   const dish_type = useWatch({ control, name: "type", defaultValue: "pizza" });
@@ -77,6 +77,7 @@ const DishForm = () => {
           <input
             type="number"
             step="0.1"
+	    min="0"
             defaultValue="30"
             {...register("diameter", {
               required: fieldRequired,
@@ -141,7 +142,7 @@ const DishForm = () => {
         </>
       ) : null}
 
-      <input type="submit" />
+      <input type="submit" className={!isValid ? "disabled" : undefined} />
     </form>
   );
 };

@@ -1,10 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,700italic,400,700);
+
 $white: white;
 $lgrey: #ddddff;
-$dgrey: #777777;
+$dgrey: #999999;
+$blue: #0066ff;
 
 body,
 html,
 div#root {
+  font-family: "Source Sans Pro", Sans-Serif;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -20,8 +24,9 @@ form {
   display: flex;
   flex-direction: column;
   background-color: $white;
-  border: 1px solid $dgrey;
-  border-radius: 2px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px $dgrey;
+
   div.pizza-group {
     display: flex;
     flex-direction: column;
@@ -30,7 +35,6 @@ form {
   input,
   select,
   div.html-duration-picker-wrapper {
-    //margin: 0 0 20px 0;
     width: auto;
   }
   input,
@@ -38,13 +42,59 @@ form {
   div.html-duration-picker {
     background-color: $white;
     border: 1px solid $dgrey;
-    border-radius: 2px;
+    border-radius: 4px;
     padding: 4px;
+  }
+  div.html-duration-picker-wrapper {
+    width: auto !important;
+    div.controls {
+      position: relative;
+      left: -20px !important;
+      height: 13px !important;
+      button {
+        background-color: $white;
+      }
+    }
+  }
+
+  input[type="submit"] {
+    background-color: $blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 3px $dgrey;
+  }
+  input[type="submit"]:hover {
+    background-color: darken($blue, 20%);
+  }
+  input[type="submit"].disabled {
+    background-color: lighten($blue, 30%);
+    color: white;
+    cursor: default;
   }
 
   .error {
     font-size: 14px;
     height: 20px;
     color: red;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    width: 100%;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  body,
+  html,
+  div#root {
+    background-color: $white;
+  }
+  div#root {
+    width: auto;
+    padding: 20px 10%;
   }
 }
