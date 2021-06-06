@@ -6,7 +6,7 @@ Run `yarn install` to setup this project, and `yarn start` to run it.
 
 # Performance
 
-Completing the task took me about 4 and a half hours to complete.
+Completing the task took me about 4 and a half hours.
 
 # Versions of tools
 
