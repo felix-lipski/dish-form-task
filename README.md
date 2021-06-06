@@ -8,8 +8,10 @@ Run `yarn install` to setup this project, and `yarn start` to run it.
 
 Completing the task took me about 4 and a half hours to complete.
 
-# Versions
+# Versions of tools
 
-node : 14.16.1
-npm : 6.14.12
-yarn : 1.22.10
+| Tool | Version |
+|------|---------|
+| node | 14.16.1 |
+| npm  | 6.14.12 |
+| yarn | 1.22.10 |
